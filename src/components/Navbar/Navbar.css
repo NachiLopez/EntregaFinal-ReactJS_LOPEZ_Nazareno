@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "Crysys";
+    src: url("../../fonts/OldeStencil.ttf")
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+.navbar li a {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+
+.navbar li {
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+
+.navbar li a:hover{
+    transition: 0.5s;
+    color: blue;
+}
+
+.navbar .left{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.navbar .left h1{
+    font-family: "Crysys", Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.navbar .right{
+    margin-right: 10px;
+    background-color: rgb(168, 168, 168);
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.navbar .right:hover{
+    transition: background-color 0.5s;
+    background-color: rgb(255, 255, 255);
+}
+
+#crysys_logo {
+    width: 50px;
+    height: auto;
+}
