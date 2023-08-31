@@ -1,9 +1,9 @@
-img {
+#cartShop {
     transition: 0.5s;
     width: 30px;
 }
 
-img:hover{
+#cartShop:hover{
     transition: 0.5s;
     width: 32px;
 }
