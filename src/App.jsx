@@ -3,18 +3,18 @@ import Navbar from './components/Navbar/Navbar.jsx'
 import ItemListContainer from './components/ItemComponents/ItemListContainer/ItemListContainer.jsx'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { ItemDetailContainer } from './components/ItemComponents/ItemDetail/ItemDetailContainer'
+import { CartContextProvider } from './components/Context/CartContext'
 
 function App() {
-  
-  // Todos los que esten dentro de routeS son los componentes que van a tener VISTA. Los que estan en Router son los componentes que van a tener una ruta
-  return (
-    
+  return (  
     <Router>
-      <Navbar />
-      <Routes> 
-        <Route path='/' element={<ItemListContainer />}/>
-        <Route path='/id/:pid' element={<ItemDetailContainer pid={1} />} />
-      </Routes>
+      <CartContextProvider>
+        <Navbar />
+        <Routes> 
+          <Route path='/' element={<ItemListContainer />}/>
+          <Route path='/id/:paramID' element={<ItemDetailContainer />} />
+        </Routes>
+      </CartContextProvider>
     </Router>
   )
 }

@@ -1,17 +1,18 @@
 
-import { Item } from '../Item/Item'
 import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetailed.css'
+import {useCartContext } from '../../Context/CartContext'
 
 export const ItemDetailed = ({product}) => {
+    const {addProduct} = useCartContext()
     const onAdd = (count) => {
         console.log(`Productos seleccionados: ${count}`)
         if(product.stock > 0 && count <= product.stock){
-            product.stock -= count
-            console.log(product)
+            product.stock -= count;
         } else {
-            alert("El stock actual no alcanza")
+            alert("No hay suficiente stock")
         }
+        addProduct({...product, quantity: count})
     }
 
     return(
@@ -27,6 +28,7 @@ export const ItemDetailed = ({product}) => {
                         {product.stock > 0 ?
                             <ItemCount initial={1} stock={product.stock} onAdd={onAdd} />
                         :
+                            //Despues voy a crear un componente que imprima que no se puede comprar porque no hay mas stock
                             <ItemCount initial={0} stock={0} onAdd={onAdd} />
                         }
                     </div>
