@@ -15,3 +15,16 @@
 .desc {
   color: #777777;
 }
+
+.buscador{
+  display: flex;
+  height: 30px;
+  margin: 30px 0px;
+}
+
+.buscador h2{
+  padding: 0px 10px;
+}
+.buscador input{
+  width: 600px;
+}

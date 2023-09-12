@@ -1,14 +1,15 @@
 import React from 'react'
 import './Navbar.css'
 import CartWidget from '../CartWidget/CartWidget'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return (
         <nav className='navbar'>
-            <div className="left">
+            <Link to="/" className="left">
                 <img id='crysys_logo' src="../../../public/crysys_logo.png" alt="crysys_logo" />
                 <h1>Crysis</h1>
-            </div>
+            </Link>
             <ul className='itemList'>
                 <li><a href="#">Remeras</a></li>
                 <li><a href="#">Pantalones</a></li>

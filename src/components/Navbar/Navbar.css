@@ -32,8 +32,10 @@
 
 .navbar .left{
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin-left: 10px;
+    color: white;
 }
 
 .navbar .left h1{

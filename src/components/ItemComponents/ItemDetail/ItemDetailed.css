@@ -1,0 +1,15 @@
+
+.only-one-item{
+    display: flex;
+    width: 100%;
+}
+
+.only-one-item-img{
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.only-one-item-info{
+    margin: 50px;
+}
