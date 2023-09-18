@@ -12,6 +12,7 @@ function App() {
         <Navbar />
         <Routes> 
           <Route path='/' element={<ItemListContainer />}/>
+          <Route path='/categoria/:catName' element={<ItemListContainer />}/>
           <Route path='/id/:paramID' element={<ItemDetailContainer />} />
         </Routes>
       </CartContextProvider>

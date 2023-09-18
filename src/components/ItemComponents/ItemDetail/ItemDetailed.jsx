@@ -9,10 +9,10 @@ export const ItemDetailed = ({product}) => {
         console.log(`Productos seleccionados: ${count}`)
         if(product.stock > 0 && count <= product.stock){
             product.stock -= count;
+            addProduct({...product, quantity: count})
         } else {
             alert("No hay suficiente stock")
         }
-        addProduct({...product, quantity: count})
     }
 
     return(

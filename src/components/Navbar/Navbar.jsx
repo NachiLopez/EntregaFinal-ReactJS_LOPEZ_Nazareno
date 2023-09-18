@@ -11,9 +11,9 @@ const Navbar = () => {
                 <h1>Crysis</h1>
             </Link>
             <ul className='itemList'>
-                <li><a href="#">Remeras</a></li>
-                <li><a href="#">Pantalones</a></li>
-                <li><a href="#">Zapatos</a></li>
+                <li><Link to={'/categoria/remeras'}>Remeras</Link></li>
+                <li><Link to={'/categoria/hoddies'} >Hoddies</Link></li>
+                <li><Link to={'/categoria/zapatillas'}>Zapatillas</Link></li>
             </ul>
             <div className="right">
                 <CartWidget />
