@@ -2,16 +2,25 @@
 import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetailed.css'
 import {useCartContext } from '../../Context/CartContext'
+import Swal from 'sweetalert2'
 
 export const ItemDetailed = ({product}) => {
     const {addProduct} = useCartContext()
     const onAdd = (count) => {
-        console.log(`Productos seleccionados: ${count}`)
         if(product.stock > 0 && count <= product.stock){
             product.stock -= count;
             addProduct({...product, quantity: count})
+            Swal.fire({
+                icon: 'success',
+                title: 'Agregado al carrito',
+                text: `Se ha añadido ${count} ${product.name} al carrito`
+            })
         } else {
-            alert("No hay suficiente stock")
+            Swal.fire({
+                icon: 'error',
+                title: 'No hay suficiente stock',
+                text: `El producto sin suficiente stock es ${product.name}`
+              })
         }
     }
 

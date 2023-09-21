@@ -1,3 +1,7 @@
+.item-detail{
+    height: 100vh;
+    background-color: white;
+}
 
 .only-one-item{
     display: flex;

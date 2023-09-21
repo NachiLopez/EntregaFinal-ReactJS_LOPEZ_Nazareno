@@ -6,9 +6,9 @@ export const Item = ({product}) => {
         <div key={product.id} className="card">
             <div className="card-body ">
                 <img className='card-img-top' src={product.imageUrl} alt="imgProducto" />
-                <h2>{product.name}</h2>
-                <p className="desc">{product.desc}</p>
-                <p>${product.price} ARS</p>
+                <h2 className='card-name'>{product.name}</h2>
+                <p className="card-desc">{product.desc}</p>
+                <p className='card-price'>${product.price} ARS</p>
             </div>
             <div className="card-footer">
                 <Link to={`/id/${product.id}`}>

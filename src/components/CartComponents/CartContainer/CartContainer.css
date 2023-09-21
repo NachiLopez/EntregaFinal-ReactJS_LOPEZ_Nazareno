@@ -1,0 +1,13 @@
+.cart-container{
+    background-color: white;
+    height: 100%;
+    background-size: cover;
+}
+
+.cart-container button{
+    margin: 10px 5px;
+}
+
+.cart-container .final-price{
+    margin: 10px 5px;
+}

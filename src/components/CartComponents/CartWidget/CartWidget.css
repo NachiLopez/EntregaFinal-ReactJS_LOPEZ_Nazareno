@@ -1,0 +1,31 @@
+.cart-body{
+    margin-right: 10px;
+    background-color: rgb(168, 168, 168);
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.cart-body:hover{
+    transition: background-color 0.5s;
+    background-color: rgb(255, 255, 255);
+}
+
+#cartShop {
+    transition: 0.5s;
+    width: 30px;
+}
+
+#cartShop:hover{
+    transition: 0.5s;
+    width: 32px;
+}
+
+.cart-body a{
+    text-decoration: none;
+}
+
+span{
+    color: black;
+}

@@ -15,7 +15,6 @@ export const CartContextProvider = ({children}) => {
 
     const deleteProducts = (productDelete) => {
         if(productDelete){
-            // Logica para borrar
             console.log("aca se borraria el producto")
         } else {
             setCartList([])
@@ -23,9 +22,7 @@ export const CartContextProvider = ({children}) => {
     }
 
     return(
-        <CartContext.Provider value={{
-            cartList, addProduct
-        }}>
+        <CartContext.Provider value={ {cartList, addProduct, deleteProducts} }>
             {children}
         </CartContext.Provider>
     )

@@ -1,0 +1,44 @@
+.cart-empty{
+    background-color: white;
+    height: 100vh;
+    background-size: cover;
+    padding: 50px;
+}
+
+.cart-empty .cart-img{
+    width: 400px;
+    transition: 1s;
+}
+
+.cart-empty .cart-img:hover{
+    width: 500px;
+    transition: 1s;
+}
+
+.cart-empty h2{
+    transition: 1s;
+}
+
+.cart-empty h2:hover{
+    font-size: 40px;
+    transition: 1s;
+}
+
+.cart-empty p{
+    color: #777;
+    transition: 1s;
+}
+
+.cart-empty p:hover{
+    font-size: 25px;
+    transition: 1s;
+}
+
+.cart-empty button{
+    transition: 1s;
+}
+
+.cart-empty button:hover{
+    font-size: 30px;
+    transition: 1s;
+}

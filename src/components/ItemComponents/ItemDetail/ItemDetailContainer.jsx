@@ -14,7 +14,6 @@ export const ItemDetailContainer = () => {
       .catch((error) => console.error("Error al obtener datos:", error))
       .finally(() => setLoading(false));
   }, [product]);
-  console.log(product);
 
   return (
     <div className="item-detail">

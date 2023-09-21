@@ -1,7 +1,6 @@
 .item-list-container {
   text-align: center;
   padding: 20px;
-  background-image: url('https://i.pinimg.com/1200x/f0/25/86/f025867df772f2011fc61b7bb40aeab0.jpg');
   border: 1px solid #ddd;
   border-radius: 8px;
 }
@@ -17,8 +16,19 @@
   border: 1px solid black;
 }
 
-.desc {
+.item-list .card-body .card-name{
+  margin: 10px 0px;
+}
+
+.item-list .card-body .card-desc{
   color: #777777;
+  font-size: 20px;
+  margin: 5px;
+}
+
+.item-list .card-body .card-price{
+  font-size: 30px;
+  margin: 0;
 }
 
 .buscador{
