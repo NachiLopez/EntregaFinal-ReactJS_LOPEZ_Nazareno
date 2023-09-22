@@ -15,14 +15,21 @@ export const CartContextProvider = ({children}) => {
 
     const deleteProducts = (productDelete) => {
         if(productDelete){
-            console.log("aca se borraria el producto")
+            // Haciendolo de esta manera funcionaba pero no se actualizaba mi vista cartContainer
+            // let indexProd = cartList.findIndex((prod) => prod.id == productDelete.id)
+            // console.log(`index: ${indexProd}`);
+            // cartList.splice(indexProd,1)
+
+            // Haciendolo de esta manera, detecta el cambio en CartList gracias a usar el set, y asi se  actualiza la vista cartContainer 
+            let updatedCartList = cartList.filter((prod) => prod.id != productDelete.id);
+            setCartList(updatedCartList)
         } else {
             setCartList([])
         }
     }
 
     return(
-        <CartContext.Provider value={ {cartList, addProduct, deleteProducts} }>
+        <CartContext.Provider value={ {cartList, setCartList, addProduct, deleteProducts} }>
             {children}
         </CartContext.Provider>
     )

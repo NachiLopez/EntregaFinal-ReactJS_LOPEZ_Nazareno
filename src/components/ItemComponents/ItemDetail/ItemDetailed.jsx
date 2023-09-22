@@ -5,16 +5,27 @@ import {useCartContext } from '../../Context/CartContext'
 import Swal from 'sweetalert2'
 
 export const ItemDetailed = ({product}) => {
-    const {addProduct} = useCartContext()
+    const {cartList,setCartList, addProduct} = useCartContext()
     const onAdd = (count) => {
         if(product.stock > 0 && count <= product.stock){
-            product.stock -= count;
-            addProduct({...product, quantity: count})
+            let productIfExists = cartList.find((prod) => prod.id == product.id)
+            if(productIfExists){
+                let updatedCartList = cartList.map((prod) => {
+                    if(prod.id == product.id){
+                        return {...prod, quantity: prod.quantity + count}
+                    }
+                    return prod
+                })
+            setCartList(updatedCartList)
+            } else {
+                addProduct({...product, quantity: count})
+            }
             Swal.fire({
                 icon: 'success',
                 title: 'Agregado al carrito',
                 text: `Se ha añadido ${count} ${product.name} al carrito`
-            })
+            }) 
+            product.stock -= count;
         } else {
             Swal.fire({
                 icon: 'error',
