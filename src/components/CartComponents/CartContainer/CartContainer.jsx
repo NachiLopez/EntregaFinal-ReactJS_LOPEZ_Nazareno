@@ -5,7 +5,7 @@ import { CartItem } from '../CartItem/CartItem'
 import '../CartContainer/CartContainer.css'
 
 const CartContainer = () => {
-    const {cartList, deleteProducts} = useCartContext()
+    const {cartList, deleteProducts, confirmPurchase} = useCartContext()
     const [montoTotal, setMontoTotal] = useState(0)
     const showMont = () => (<h3 className='final-price'>Precio final: ${montoTotal}</h3>)
 
@@ -21,6 +21,8 @@ const CartContainer = () => {
         {cartList.length == 0 ? <CartEmpty/> : cartList.map(prod => <CartItem key={prod.id} cartProduct={prod}/>)}
         {cartList.length != 0 ? showMont() : <></>}
         {cartList.length != 0 ? <button className='btn btn-outline-dark' onClick={()=>deleteProducts()}>Vaciar carrito</button> : <></>}
+        {cartList.length != 0 ? <button className='btn btn-success' onClick={()=>confirmPurchase(cartList, montoTotal)}>Confirmar compra</button> : <></>}
+
     </div>
   )
 }
