@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../ItemListContainer/ItemListContainer.css";
-import { fetchData } from "../../../utils/fetchData";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
-import { addDoc, collection, getDocs, getFirestore, query, where } from "firebase/firestore";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 
 const ItemListContainer = () => {
@@ -20,21 +19,7 @@ const ItemListContainer = () => {
     .then(resp => setProducts(resp.docs.map(prod => ({id: prod.id, ...prod.data()}))))
     .catch(error => console.log(error))
     .finally(() => setLoading(false))
-  }, [catName])
-  
-  // useEffect(() =>{
-  //   if (catName) {
-  //     fetchData()
-  //     .then(resp => setProducts(resp.filter(product => product.category == catName)))
-  //     .catch((error) => console.error("Error al obtener datos:", error))
-  //     .finally(() => setLoading(false));
-  //   } else {
-  //     fetchData()
-  //     .then(resp => setProducts(resp))
-  //     .catch((error) => console.error("Error al obtener datos:", error))
-  //     .finally(() => setLoading(false));
-  //   }
-  // }, [catName])
+  }, [catName, products])
 
   return (
     <div className="item-list-container">

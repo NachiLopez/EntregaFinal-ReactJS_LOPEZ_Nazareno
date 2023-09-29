@@ -24,8 +24,7 @@ export const ItemDetailed = ({product}) => {
                 icon: 'success',
                 title: 'Agregado al carrito',
                 text: `Se ha añadido ${count} ${product.name} al carrito`
-            }) 
-            product.stock -= count;
+            })
         } else {
             Swal.fire({
                 icon: 'error',

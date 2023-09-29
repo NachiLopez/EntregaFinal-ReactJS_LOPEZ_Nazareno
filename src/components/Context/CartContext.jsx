@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react"
 import { useProductsContext } from "./ProductsContext"
 import Swal from "sweetalert2"
-import { addDoc, collection, getFirestore } from "firebase/firestore"
+import { addDoc, collection, doc, getFirestore, writeBatch } from "firebase/firestore"
 
 const CartContext = createContext([])
 export const useCartContext = () => useContext(CartContext)
@@ -10,6 +10,9 @@ console.log(CartContext)
 export const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
     const {products} = useProductsContext()
+    const db = getFirestore()
+    const ordersColecction = collection(db, 'orders')
+    const batch = writeBatch(db)
 
     const addProduct = (newProduct) =>{
         setCartList(
@@ -17,32 +20,29 @@ export const CartContextProvider = ({children}) => {
         )
     }
 
-    const confirmPurchase = (productsPurchase, montoTotal) => {
+    const confirmPurchase = (productsPurchase, montoTotal, formData) => {
         const order ={}
-        order.buyer = {email: 'juan@gmail.com', name: 'Juan', telephone: '11 4443-6759'}
+        order.buyer = formData
         order.products = productsPurchase.map(prod => ({id: prod.id, name: prod.name, price: prod.price, quantity: prod.quantity}))
         order.total = montoTotal
-        console.log(order);
         Swal.fire({
             icon: 'success',
             title: 'Compra realizada con exito'
         })
-        // Deberia hacer un update en el product para settear el nuevo stock
-        const db = getFirestore()
-        const ordersColecction = collection(db, 'orders')
+        .then(()=> setCartList([]))
         addDoc(ordersColecction, order)
-        .then(resp => console.log(resp))
+        // Los productos que se encontraron en la compra, los ubico en la BD y le resto el stock correspondiente
+        productsPurchase.forEach(prod => {
+            let queryProduct = doc(db, "products", prod.id)
+            batch.update(queryProduct, {
+                stock: (prod.stock-1)
+            })
+        });
+        batch.commit()
     }
 
     const deleteProducts = (productDelete) => {
         if(productDelete){
-            // Haciendolo de esta manera funcionaba pero no se actualizaba mi vista cartContainer
-            // let indexProd = cartList.findIndex((prod) => prod.id == productDelete.id)
-            // console.log(`index: ${indexProd}`);
-            // cartList.splice(indexProd,1)
-
-            // Haciendolo de esta manera, detecta el cambio en CartList gracias a usar el set, y asi se  actualiza la vista cartContainer 
-
             // Recorrer products para encontrar al q corresponda al id de productDelete y devolverle al stock el quantity de productDelete
             let updatedCartList = cartList.filter((prod) => prod.id != productDelete.id);
             setCartList(updatedCartList)
