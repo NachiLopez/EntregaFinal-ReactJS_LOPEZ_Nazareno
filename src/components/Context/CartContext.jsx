@@ -9,7 +9,7 @@ console.log(CartContext)
 
 export const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
-    const {products} = useProductsContext()
+    const [idOrder, setIdOrder] = useState('')
     const db = getFirestore()
     const ordersColecction = collection(db, 'orders')
     const batch = writeBatch(db)
@@ -25,12 +25,16 @@ export const CartContextProvider = ({children}) => {
         order.buyer = formData
         order.products = productsPurchase.map(prod => ({id: prod.id, name: prod.name, price: prod.price, quantity: prod.quantity}))
         order.total = montoTotal
+        addDoc(ordersColecction, order)
+        .then(({id}) => {
+            setIdOrder(id)
+        })
         Swal.fire({
             icon: 'success',
-            title: 'Compra realizada con exito'
+            title: 'Compra realizada con exito',
+            html: `Tu <span>ID</span> del pedido: <span style="text-decoration:underline;">${idOrder}</span>`
         })
         .then(()=> setCartList([]))
-        addDoc(ordersColecction, order)
         // Los productos que se encontraron en la compra, los ubico en la BD y le resto el stock correspondiente
         productsPurchase.forEach(prod => {
             let queryProduct = doc(db, "products", prod.id)
