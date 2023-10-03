@@ -9,7 +9,7 @@ LinkedIn: https://www.linkedin.com/in/nazareno-lopez-903a48211/
 
 ----------------------------------------------------------------------------------------------------------------
 
-Deploy demo con vercel: 
+Deploy demo con vercel: https://crysis-reactjs.vercel.app/
 Link para ver como funciona el proyecto: https://www.youtube.com/watch?v=bDyTOFEgbO0&ab_channel=LOPEZNazareno
 
 ----------------------------------------------------------------------------------------------------------------
