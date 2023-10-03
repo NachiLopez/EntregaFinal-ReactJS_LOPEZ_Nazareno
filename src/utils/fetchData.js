@@ -14,7 +14,7 @@ const products = [
 
 /* Lo dejo para poder llamar a los productos si se termina la cuota de FireBase, el problema es que no
 se pueden ver los detalles del producto porque no tiene ID (lo borro para que el ID lo genere automaticamente
-el firebase al agregar el producto) */
+el firebase al agregar el producto) y tampoco funciona el filtrado por categoria*/
 export const fetchData = (pid) => {
     return new Promise((resolve) => {
       setTimeout(() => {

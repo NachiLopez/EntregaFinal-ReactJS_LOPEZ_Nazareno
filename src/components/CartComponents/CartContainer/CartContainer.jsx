@@ -55,5 +55,4 @@ const CartContainer = () => {
     </div>
   )
 }
-
 export default CartContainer
