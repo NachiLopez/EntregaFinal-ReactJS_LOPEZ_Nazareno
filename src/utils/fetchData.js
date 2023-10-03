@@ -12,7 +12,14 @@ const products = [
     { name: 'Hoddie blanco Maria Jesus', category:'hoddies', price:29900, desc:'Hoddie blanco oversize de Maria Jesus', imageUrl:'/public/mariajesus-hoddie-white-men.jpeg', stock: 100 }
 ];
 
-// Este es el metodo que se usa
+export const fetchData = (pid) => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(pid ? products.find(product => product.id == pid) : products);
+      }, 1000);
+    });
+};
+
 export const addProductsFireBase = async () => {
   const productosPasados = await fetchData()
   const db = getFirestore();
