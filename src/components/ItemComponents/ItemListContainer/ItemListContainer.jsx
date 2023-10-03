@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
+import { fetchData } from "../../../utils/fetchData";
 
 
 const ItemListContainer = () => {
@@ -12,6 +13,10 @@ const ItemListContainer = () => {
   const {catName} = useParams();
 
   useEffect(()=>{
+    // TEMPORAL PORQUE SE ME TERMINO LA CUOTA DE FIREBASE
+    // fetchData()
+    // .then((resp) => setProducts(resp))
+    // METODO A USAR (El de abajo)
     const db = getFirestore()
     const queryCollection = collection(db, 'products')
     const queryFilter = (catName ? query(queryCollection, where('category', '==', catName.toLowerCase())) : queryCollection )

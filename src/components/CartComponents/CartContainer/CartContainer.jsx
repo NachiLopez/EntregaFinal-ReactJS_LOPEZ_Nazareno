@@ -37,18 +37,8 @@ const CartContainer = () => {
       setErrorInputName(!isNameValid);
       setErrorInputEmail(!isEmailValid);
       setErrorInputPhone(!isPhoneValid);
-
       // Si alguno de los campos no es válido, isValidated será false, de lo contrario, será true.
       setIsValidated(isNameValid && isEmailValid && isPhoneValid);
-
-
-      // De esta manera (abajo) no se me producia el cambio del estado del boton, de disponible a no disponible y viceversa. Siempre me devolvia a todas las condiciones TRUE y no se porque 
-
-      // {(formData.name.length) > 3 ? setErrorInputName(false) : setErrorInputName(true)}
-      // {formData.email.length != '' && isValidEmail.test(formData.email) ? setErrorInputEmail(false) : setErrorInputEmail(true)}
-      // { formData.tel.length > 5 && !isNaN(parseInt(formData.phone)) ? setErrorInputPhone(false) : setErrorInputPhone(true)}
-      
-      // {(errorInputName && errorInputEmail && errorInputPhone) ? setIsValidated(true) : setIsValidated(false)}
     }
 
     useEffect(()=>{
@@ -58,9 +48,9 @@ const CartContainer = () => {
   return (
     <div className='cart-container'>
         {cartList.length == 0 ? <CartEmpty/> : cartList.map(prod => <CartItem key={prod.id} cartProduct={prod}/>)}
-        {cartList.length != 0 ? showMont() && <FormularioDatosComprador formData={formData} handleOnChange={handleOnChange} errorInputName={errorInputName} errorInputEmail={errorInputEmail} errorInputPhone={errorInputPhone}/> : <></>}
+        {cartList.length != 0 ? showMont() : <></>}
+        {cartList.length != 0 ? <FormularioDatosComprador formData={formData} handleOnChange={handleOnChange} errorInputName={errorInputName} errorInputEmail={errorInputEmail} errorInputPhone={errorInputPhone}/> : <></>}
         {cartList.length != 0 ? <button className='btn btn-outline-dark' onClick={()=>deleteProducts()}>Vaciar carrito</button> : <></>}
-        {console.log('validated', isValidated, 'name', errorInputName, 'mail', errorInputEmail, 'tel', errorInputPhone)}
         {cartList.length != 0 ? <button className={isValidated ? 'btn btn-success' : 'btn btn-success disabled'} onClick={()=>confirmPurchase(cartList, montoTotal,formData)}>Confirmar compra</button> : <></>}
     </div>
   )

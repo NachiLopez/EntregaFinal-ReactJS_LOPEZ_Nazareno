@@ -1,4 +1,3 @@
-
 import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetailed.css'
 import {useCartContext } from '../../Context/CartContext'
@@ -44,12 +43,7 @@ export const ItemDetailed = ({product}) => {
                     <p>${product.price} ARS</p>
                     <p>Stock disponible: {product.stock}</p>
                     <div className="addToCart card">
-                        {product.stock > 0 ?
-                            <ItemCount initial={1} stock={product.stock} onAdd={onAdd} />
-                        :
-                            //Despues voy a crear un componente que imprima que no se puede comprar porque no hay mas stock
-                            <ItemCount initial={0} stock={0} onAdd={onAdd} />
-                        }
+                    <ItemCount initial={1} stock={product.stock} onAdd={onAdd} />
                     </div>
                 </div>
             </div>
