@@ -13,18 +13,14 @@ const ItemListContainer = () => {
   const {catName} = useParams();
 
   useEffect(()=>{
-    // TEMPORAL PORQUE SE ME TERMINO LA CUOTA DE FIREBASE
-    fetchData()
-    .then((resp) => setProducts(resp), 
-    setLoading(false))
-    // METODO A USAR (El de abajo)
-    // const db = getFirestore()
-    // const queryCollection = collection(db, 'products')
-    // const queryFilter = (catName ? query(queryCollection, where('category', '==', catName.toLowerCase())) : queryCollection )
-    // getDocs(queryFilter)
-    // .then(resp => setProducts(resp.docs.map(prod => ({id: prod.id, ...prod.data()}))))
-    // .catch(error => console.log(error))
-    // .finally(() => setLoading(false))
+    // Puede que no funcione porque se excede la cuota de FireStore y tire el error en la consola gracias al catch, en ese caso a la medianoche se restablece cada día, hora del Pacífico
+    const db = getFirestore()
+    const queryCollection = collection(db, 'products')
+    const queryFilter = (catName ? query(queryCollection, where('category', '==', catName.toLowerCase())) : queryCollection )
+    getDocs(queryFilter)
+    .then(resp => setProducts(resp.docs.map(prod => ({id: prod.id, ...prod.data()}))))
+    .catch(error => console.log(error))
+    .finally(() => setLoading(false))
   }, [catName, products])
 
   return (

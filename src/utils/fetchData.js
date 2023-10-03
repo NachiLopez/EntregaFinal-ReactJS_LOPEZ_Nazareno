@@ -12,17 +12,6 @@ const products = [
     { name: 'Hoddie blanco Maria Jesus', category:'hoddies', price:29900, desc:'Hoddie blanco oversize de Maria Jesus', imageUrl:'/public/mariajesus-hoddie-white-men.jpeg', stock: 100 }
 ];
 
-/* Lo dejo para poder llamar a los productos si se termina la cuota de FireBase, el problema es que no
-se pueden ver los detalles del producto porque no tiene ID (lo borro para que el ID lo genere automaticamente
-el firebase al agregar el producto) y tampoco funciona el filtrado por categoria*/
-export const fetchData = (pid) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(pid ? products.find(product => product.id == pid) : products);
-      }, 1000);
-    });
-};
-
 // Este es el metodo que se usa
 export const addProductsFireBase = async () => {
   const productosPasados = await fetchData()
