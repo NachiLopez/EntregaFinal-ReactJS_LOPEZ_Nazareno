@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 
 
-// 
+// https://console.firebase.google.com/u/1/project/crysis-reactjs/firestore/data/~2F
 // const firebaseConfig = {
 //   apiKey: "AIzaSyCF5Vu6dv1YuZAega433mFnVowyq_c-eGE",
 //   authDomain: "crysis-reactjs.firebaseapp.com",
