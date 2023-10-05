@@ -1,16 +1,14 @@
 # CRYSIS PAGE WITH REACT + VITE
 
-<div style="display: flex; flex-direction: column; align-items: center; place-content: center; width: 100px; font-size: 70px; margin: 0px auto;">
-  <img style='width: 100px' src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png' />
-  <p>+</p>
-  ![](https://seeklogo.com/images/V/vite-logo-BFD4283991-seeklogo.com.png)
+<div style="display: flex; align-items: center; place-content: center; width: 100px; font-size: 70px; margin: 0px auto;">
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png) + ![](https://seeklogo.com/images/V/vite-logo-BFD4283991-seeklogo.com.png)
 </div>
 
 ## Introducción
 
 Este proyecto fue realizado utilizando React + Vite con el fin de hacer una página eCommerce como proyecto final del curso realizado con Coderhouse donde se implementaron los siguientes temas:
 - Componentes
-- Promises, asincronía y map
+- Promesas, asincronía y map
 - Consumo de API’s
 - Hooks, children y patrones
 - Routing y navegación
@@ -46,6 +44,7 @@ Librerias utilizadas y necesarias para el funcionamiento correcto de la app loca
 - npm install bootstrap@5.3.1
 - npm install firebase
 - npm install react-bootstrap
-
-
+- npm install react react-dom
+- npm install react-router-dom@6.15.0
+- npm install sweetalert2
 
