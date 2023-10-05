@@ -1,10 +1,12 @@
 # CRYSIS PAGE WITH REACT + VITE
 
-<img style="width: 100px; padding: 0px 10px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" alt="">
-<h2 style="padding: 0px 10px; margin: 0; font-size: 90px;"><span>+</span></h2>
-<img style="width: 100px; padding: 0px 10px;" src="https://seeklogo.com/images/V/vite-logo-BFD4283991-seeklogo.com.png" alt="">
-<h2 style="padding: 0px 10px; margin: 0; font-size: 90px;"><span>=</span></h2>
-<img style="width: 100px; padding: 0px 10px;" src="https://i.ibb.co/6gCw0gg/crysys-logo.png" alt="">
+<div class="readme-intro" style="display: flex;">
+  <img style="width: 100px; padding: 0px 10px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" alt="">
+  <h2 style="padding: 0px 10px; margin: 0; font-size: 90px;"><span>+</span></h2>
+  <img style="width: 100px; padding: 0px 10px;" src="https://seeklogo.com/images/V/vite-logo-BFD4283991-seeklogo.com.png" alt="">
+  <h2 style="padding: 0px 10px; margin: 0; font-size: 90px;"><span>=</span></h2>
+  <img style="width: 100px; padding: 0px 10px;" src="https://i.ibb.co/6gCw0gg/crysys-logo.png" alt="">
+</div>
 ----------------------------------------------------------------------------------------------------------------
 
 Este proyecto fue realizado utilizando React + Vite con el fin de hacer un eCommerce 
