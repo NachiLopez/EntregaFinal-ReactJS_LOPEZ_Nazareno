@@ -50,3 +50,9 @@ Librerias utilizadas y necesarias para el funcionamiento correcto de la app loca
 - npm install react-router-dom@6.15.0
 - npm install sweetalert2
 
+## Descargar proyecto
+
+1. cd (ruta donde quieras guardar el proyecto)
+2. git clone https://github.com/NachiLopez/EntregaFinal-ReactJS_LOPEZ_Nazareno/tree/main
+3. Instalar librerías
+4. npm run dev
