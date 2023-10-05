@@ -1,9 +1,7 @@
 # CRYSIS PAGE WITH REACT + VITE
 
-<div class="readme-intro" style="display: flex; align-items: center; place-content: center;">
-  <img style="width: 100px; padding: 0px 10px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" alt="">
-  <h2 style="padding: 0px 10px; margin: 0; font-size: 70px;"><span>+</span></h2>
-  <img style="width: 100px; padding: 0px 10px;" src="https://seeklogo.com/images/V/vite-logo-BFD4283991-seeklogo.com.png" alt="">
+<div style="display: flex; align-items: center; place-content: center; width: 100px; font-size: 70px; margin: 0px auto;">
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png) + ![](https://seeklogo.com/images/V/vite-logo-BFD4283991-seeklogo.com.png)
 </div>
 
 ## Introducción
