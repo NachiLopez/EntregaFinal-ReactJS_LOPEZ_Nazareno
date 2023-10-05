@@ -36,7 +36,7 @@ export const ItemDetailed = ({product}) => {
     return(
         <div key={product.id} className="card">
             <div className="card-body only-one-item">
-                <img className='card-img-top only-one-item-img' src={product.imageUrl} alt="imgProducto" />
+                <img className='only-one-item-img' src={product.imageUrl} alt="imgProducto" />
                 <div className='only-one-item-info'>
                     <h2>{product.name}</h2>
                     <p className="desc">{product.desc}</p>
@@ -46,9 +46,6 @@ export const ItemDetailed = ({product}) => {
                     <ItemCount initial={1} stock={product.stock} onAdd={onAdd} />
                     </div>
                 </div>
-            </div>
-            <div className="card-footer">
-                <h3>Te podria interesar...</h3>
             </div>
         </div>
     )

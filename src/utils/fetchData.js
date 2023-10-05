@@ -12,15 +12,15 @@ const products = [
     { name: 'Hoddie blanco Maria Jesus', category:'hoddies', price:29900, desc:'Hoddie blanco oversize de Maria Jesus', imageUrl:'https://i.ibb.co/G0YQZG8/mariajesus-hoddie-white-men.jpg', stock: 100 }
 ];
 
-export const fetchData = (pid) => {
+export const fetchData = () => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(pid ? products.find(product => product.id == pid) : products);
+        resolve(products);
       }, 1000);
     });
 };
 
-// Solo se ejecuta si no hay productos con un boton que está insertado en ItemList.jsx
+// Se ejecuta con un boton que está insertado en ItemList.jsx, este boton aparece SOLO si no hay productos en la BD
 export const addProductsFireBase = async () => {
   const passedProducts = await fetchData()
   const db = getFirestore();
