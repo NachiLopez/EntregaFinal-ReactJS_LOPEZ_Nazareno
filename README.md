@@ -1,5 +1,7 @@
 # CRYSIS PAGE WITH REACT + VITE
 
+<img id='crysis_logo' src="https://i.ibb.co/6gCw0gg/crysys-logo.png" alt="crysis_logo" />
+
 ----------------------------------------------------------------------------------------------------------------
 
 Este proyecto fue realizado utilizando React + Vite con el fin de hacer un eCommerce 
