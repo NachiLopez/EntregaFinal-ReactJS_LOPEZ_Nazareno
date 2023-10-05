@@ -1,6 +1,6 @@
 # CRYSIS PAGE WITH REACT + VITE
 
-<img id='crysis_logo' src="https://i.ibb.co/6gCw0gg/crysys-logo.png" alt="crysis_logo" />
+<img src="https://i.ibb.co/6gCw0gg/crysys-logo.png" className="w-25"/>
 
 ----------------------------------------------------------------------------------------------------------------
 
