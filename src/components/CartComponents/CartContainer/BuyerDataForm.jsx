@@ -2,11 +2,11 @@ import React from 'react'
 import '../CartContainer/CartContainer.css'
 import { useCartContext } from '../../Context/CartContext'
 
-const FormularioDatosComprador = ({handleOnChange, formData, errorInputName, errorInputEmail, errorInputPhone}) => {
+const BuyerDataForm = ({handleOnChange, formData, errorInputName, errorInputEmail, errorInputPhone}) => {
     const {} = useCartContext()
 
     return (
-        <div className="datos-comprador">
+        <div className="buyer-data">
             <h3>Ingresar datos del comprador</h3>
             <form>
                 <label className="form-label">Nombre completo</label>
@@ -41,4 +41,4 @@ const FormularioDatosComprador = ({handleOnChange, formData, errorInputName, err
     )
 }
 
-export default FormularioDatosComprador
+export default BuyerDataForm

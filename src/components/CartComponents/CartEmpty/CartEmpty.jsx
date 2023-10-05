@@ -9,7 +9,7 @@ const CartEmpty = () => {
         <h2>No hay ningun elemento en el carrito ahora mismo</h2>
         <p>Si deseas puedes volver a la pagina principal y agregar algun producto de tu interes</p>
         <Link to={'/'}>
-            <button className='btn btn-outline-dark'>Volver a home</button>
+            <button className='btn btn-outline-dark'>Volver al inicio</button>
         </Link>
     </div>
   )

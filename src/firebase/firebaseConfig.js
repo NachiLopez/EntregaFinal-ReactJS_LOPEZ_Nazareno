@@ -1,6 +1,4 @@
-
 import { initializeApp } from "firebase/app";
-
 
 // https://console.firebase.google.com/u/1/project/crysis-reactjs/firestore/data/~2F
 // const firebaseConfig = {

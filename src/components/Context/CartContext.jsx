@@ -17,11 +17,11 @@ export const CartContextProvider = ({children}) => {
         )
     }
 
-    const confirmPurchase = (productsPurchase, montoTotal, formData) => {
+    const confirmPurchase = (productsPurchase, totalAmount, formData) => {
         const order ={}
         order.buyer = formData
         order.products = productsPurchase.map(prod => ({id: prod.id, name: prod.name, price: prod.price, quantity: prod.quantity}))
-        order.total = montoTotal
+        order.total = totalAmount
         addDoc(ordersColecction, order)
         .then(({id}) => {
             Swal.fire({
@@ -34,7 +34,8 @@ export const CartContextProvider = ({children}) => {
         productsPurchase.forEach(prod => {
             let queryProduct = doc(db, "products", prod.id)
             batch.update(queryProduct, {
-                stock: (prod.stock-1)
+                // No me di cuenta que solo restaba uno así que lo cambie a prod.quantity y tengo q verificar que funcione
+                stock: (prod.stock-prod.quantity)
             })
         });
         batch.commit()

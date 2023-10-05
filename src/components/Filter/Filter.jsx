@@ -9,7 +9,7 @@ export const Filter = ({children, products}) =>{
 
     return (
         <div>
-            <div className="buscador">
+            <div className="product-finder">
                 <h2>🔍</h2>
                 <input type="text" value={filterState} onChange={handleFilterChange} placeholder="Ingrese el nombre del producto a buscar..."/>
             </div>

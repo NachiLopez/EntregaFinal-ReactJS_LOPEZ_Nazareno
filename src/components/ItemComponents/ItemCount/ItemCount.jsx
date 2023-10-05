@@ -6,9 +6,9 @@ export const ItemCount = ({initial, stock, onAdd}) => {
 
     return (
         <div className="item-count">
-            <button onClick={handleSubtract}>-1</button>
+            <button className="btn btn-outline-dark" onClick={handleSubtract}>-1</button>
             <strong>{count}</strong>
-            <button onClick={handleAdd}>+1</button>
+            <button className="btn btn-outline-dark" onClick={handleAdd}>+1</button>
             <button onClick={()=>onAdd(count)} className="btn btn-outline-dark">Agregar al carrito</button>
         </div>
     )   

@@ -5,13 +5,13 @@ import { useEffect, useState } from 'react';
 
 const CartWidget = () => {
     const {cartList} = useCartContext();
-    const [cantidadProds, setCantidadProds] = useState('0')
+    const [quantityProducts, setQuantityProducts] = useState('0')
     
     useEffect(()=>{
         {cartList.length > 0 ? 
-            setCantidadProds(cartList.reduce((total, product) => (total + product.quantity), 0)) 
+            setQuantityProducts(cartList.reduce((total, product) => (total + product.quantity), 0)) 
             : 
-            setCantidadProds(0) 
+            setQuantityProducts(0) 
         }
     }, [cartList])
     
@@ -19,7 +19,7 @@ const CartWidget = () => {
             <Link to={'/cart'}>
                 <div className='cart-body'>
                     <img id='cartShop' src="https://cdn-icons-png.flaticon.com/512/3394/3394009.png" alt="cart" />
-                    <span>{cantidadProds}</span>
+                    <span>{quantityProducts}</span>
                 </div>
             </Link>
     )

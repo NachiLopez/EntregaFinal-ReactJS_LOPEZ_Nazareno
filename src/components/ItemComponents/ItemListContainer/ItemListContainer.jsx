@@ -4,8 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
-import { fetchData } from "../../../utils/fetchData";
-
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
@@ -13,7 +11,7 @@ const ItemListContainer = () => {
   const {catName} = useParams();
 
   useEffect(()=>{
-    // Puede que no funcione porque se excede la cuota de FireStore y tire el error en la consola gracias al catch, en ese caso a la medianoche se restablece cada día, hora del Pacífico
+    // Puede que no funcione porque se excede la cuota de FireStore y muestra el error en la consola gracias al catch, en ese caso a la medianoche se restablece cada día, hora del Pacífico
     const db = getFirestore()
     const queryCollection = collection(db, 'products')
     const queryFilter = (catName ? query(queryCollection, where('category', '==', catName.toLowerCase())) : queryCollection )

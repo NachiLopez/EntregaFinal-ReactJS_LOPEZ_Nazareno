@@ -3,12 +3,12 @@ import { useCartContext } from '../../Context/CartContext'
 import CartEmpty from '../CartEmpty/CartEmpty'
 import { CartItem } from '../CartItem/CartItem'
 import '../CartContainer/CartContainer.css'
-import FormularioDatosComprador from './FormularioDatosComprador'
+import BuyerDataForm from '../CartContainer/BuyerDataForm'
 
 const CartContainer = () => {
     const {cartList, deleteProducts, confirmPurchase} = useCartContext()
-    const [montoTotal, setMontoTotal] = useState(0)
-    const showMont = () => (<h3 className='final-price'>Precio final: ${montoTotal}</h3>)
+    const [totalAmount, setTotalAmount] = useState(0)
+    const showAmount = () => (<h3 className='final-price'>Precio final: ${totalAmount}</h3>)
     const [formData, setFormData] = useState({name:'', email:'', tel:''})
     const [isValidated, setIsValidated] = useState(false)
     const [errorInputName, setErrorInputName] = useState(false)
@@ -16,7 +16,7 @@ const CartContainer = () => {
     const [errorInputPhone, setErrorInputPhone] = useState(false)
 
     useEffect(()=>{
-      setMontoTotal(cartList.reduce((monto, prod) => (monto + prod.price * prod.quantity),0))
+      setTotalAmount(cartList.reduce((amount, prod) => (amount + prod.price * prod.quantity),0))
     }, [cartList])
 
     const handleOnChange = (evt) => {
@@ -48,10 +48,10 @@ const CartContainer = () => {
   return (
     <div className='cart-container'>
         {cartList.length == 0 ? <CartEmpty/> : cartList.map(prod => <CartItem key={prod.id} cartProduct={prod}/>)}
-        {cartList.length != 0 ? showMont() : <></>}
-        {cartList.length != 0 ? <FormularioDatosComprador formData={formData} handleOnChange={handleOnChange} errorInputName={errorInputName} errorInputEmail={errorInputEmail} errorInputPhone={errorInputPhone}/> : <></>}
+        {cartList.length != 0 ? showAmount() : <></>}
+        {cartList.length != 0 ? <BuyerDataForm formData={formData} handleOnChange={handleOnChange} errorInputName={errorInputName} errorInputEmail={errorInputEmail} errorInputPhone={errorInputPhone}/> : <></>}
         {cartList.length != 0 ? <button className='btn btn-outline-dark' onClick={()=>deleteProducts()}>Vaciar carrito</button> : <></>}
-        {cartList.length != 0 ? <button className={isValidated ? 'btn btn-success' : 'btn btn-success disabled'} onClick={()=>confirmPurchase(cartList, montoTotal,formData)}>Confirmar compra</button> : <></>}
+        {cartList.length != 0 ? <button className={isValidated ? 'btn btn-success' : 'btn btn-success disabled'} onClick={()=>confirmPurchase(cartList, totalAmount,formData)}>Confirmar compra</button> : <></>}
     </div>
   )
 }
