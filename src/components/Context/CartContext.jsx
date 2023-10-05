@@ -34,6 +34,7 @@ export const CartContextProvider = ({children}) => {
         productsPurchase.forEach(prod => {
             let queryProduct = doc(db, "products", prod.id)
             batch.update(queryProduct, {
+                // No me di cuenta que solo restaba uno así que lo cambie a prod.quantity y tengo q verificar que funcione
                 stock: (prod.stock-prod.quantity)
             })
         });

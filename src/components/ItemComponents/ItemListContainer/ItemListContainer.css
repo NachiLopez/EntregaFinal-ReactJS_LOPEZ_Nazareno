@@ -14,15 +14,23 @@
 .item-list .card{
   background-color: rgba(255, 255, 255, 0.847);
   border: 1px solid black;
+  height: 100%;
+  transition: 1s;
+}
+.item-list .card:hover{
+  background-color: rgb(207, 207, 207);
+  border: 1px solid rgb(144, 4, 72);
+  transition: 1s;
 }
 
 .item-list .card-body .card-name{
+  font-size: 28px;
   margin: 10px 0px;
 }
 
 .item-list .card-body .card-desc{
   color: #777777;
-  font-size: 20px;
+  font-size: 18px;
   margin: 5px;
 }
 
@@ -31,15 +39,37 @@
   margin: 0;
 }
 
+.item-list .card-img-top{
+  border: 1px dashed #333;
+  border-radius: 10px;
+}
+
 .product-finder{
   display: flex;
-  height: 30px;
+  align-items: center;
+  background-color: #3333334e;
+  border: 1px dotted #333;
+  padding: 5px;
   margin: 30px 0px;
 }
 
 .product-finder h2{
   padding: 0px 10px;
+  transition: 1s;
 }
+.product-finder h2:hover{
+  font-size: 35px;
+  transition: 1s;
+}
+
 .product-finder input{
-  width: 600px;
+  width: 60%;
+  height: 30px;
+  transition: 1s;
+}
+.product-finder input:hover{
+  transition: 1s;
+  font-size: 18px;
+  width: 60%;
+  height: 30px;
 }
