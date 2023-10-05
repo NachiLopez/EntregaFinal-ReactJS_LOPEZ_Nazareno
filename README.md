@@ -2,9 +2,6 @@
 
 <div style="display: flex; align-items: center; place-content: center; width: 100px; font-size: 70px; margin: 0px auto;">
 	<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png' style='width: 100px'/>
-	<p style='font-size: 70px; padding: 0px 10px; margin: 0px 10px;'>
-	+
-	</p>
 	<img src='https://seeklogo.com/images/V/vite-logo-BFD4283991-seeklogo.com.png' style='width: 100px' />
 </div>
 
